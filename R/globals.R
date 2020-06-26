@@ -1,0 +1,10 @@
+utils::globalVariables(c("CO_MUNICIPIO", "CO_ENTIDADE", "CO_ETAPA_ENSINO",
+                         "NU_ANO_CENSO", "QTD_ALUNOS", "CO_UF", "SG_UF",
+                         "NO_MUNICIPIO", "NO_ENTIDADE", "CO_TP_LOCALIZACAO",
+                         "NO_ETAPA_ENSINO", "data.tbl", "data.ts",
+                         "fit.ets", "fcast.ets", "error.ets", "key",
+                         "value", "hi.80", "hi.95", "TAM_SERIE_HISTORICA",
+                         "CENSO_REF", "DT_HR_EXEC", "FLAG_SERIE_COMPLETA",
+                         "index", "lo.95", "lo.80", "MAPE", "MASE", "QTD_ALUNOS_AJUSTADA",
+                         "ets_forecast_censo", "ma_forecast_censo", "arima_forecast_censo",
+                         "ets_ma_forecast_censo", "DS_TP_LOCALIZACAO", "i"))

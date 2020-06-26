@@ -1,0 +1,38 @@
+Package: projPNLD
+Type: Package
+Title: Projeção do alunado no âmbito do PNLD
+Version: 0.1.0
+Date: 2020-06-25
+Authors@R: c(
+    person(given="Allan", family="Quadros", email = "allan.quadros@fnde.gov.br",
+    role = c("aut", "cre")),
+    person(given="Mateus", family="Ananias", email = "mateus.ananias@fnde.gov.br", 
+    role = c("ctb"))
+    )
+Description: Realiza a pojeção de dois passos (h=2) do número de alunos a partir 
+    de séries temporais do censo escolar de modo a subsidiar a aquisição de 
+    livros didáticos no âmbito do PNLD. É ajustado automaticamente um modelo de 
+    Suavização Exponencial (Exponential Smoothing) para cada etapa de ensino de 
+    cada escola pública no Brasil, resultando em aproximadamente 600 mil modelos 
+    gerados.
+Encoding: UTF-8
+License: GPL-3
+Imports: ROracle,
+    DBI,
+    dplyr,
+    dbplyr,
+    magrittr,
+    lubridate,
+    tidyr,
+    tibble,
+    timetk,
+    sweep,
+    purrr,
+    forecast,
+    imputeTS,
+    parallel,
+    doParallel,
+    foreach
+Depends: R (>= 3.5.0)
+SystemRequirements: Oracle Instant Client (OCI libraries) v19.6.0.0 e ROracle 1.3-2.
+RoxygenNote: 6.1.1
