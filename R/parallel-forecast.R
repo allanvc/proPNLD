@@ -76,8 +76,7 @@ parallel_forecast <- function(n_clusters, grupos, ano_FIRST_censo, ano_LAST_cens
                                          #                    tk_ts_transform_and_impute)
                                           forecast_FUNC(grupos[[i]],
                                                         ano_FIRST_censo,
-                                                        ano_LAST_censo,
-                                                        tk_ts_transform_and_impute)
+                                                        ano_LAST_censo)
 
                                        }
     # ok! bem rapido!
