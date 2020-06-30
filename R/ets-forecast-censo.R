@@ -45,7 +45,7 @@ ets_forecast_censo <- function(grupos, ano_FIRST_censo, ano_LAST_censo){
       #calcular erros
       dplyr::mutate(error.ets = purrr::map(fcast.ets, forecast::accuracy)) %>%
       # dplyr::mutate(error.ets = purrr::map(error.ets, tibble::as_tibble)) %>%
-      # dplyr::mutate(error.ets = purrr::map(error.ets, as.data.frame)) %>%
+      dplyr::mutate(error.ets = purrr::map(error.ets, as.data.frame)) %>%
       tidyr::unnest(error.ets) %>%
       #parte tidy/apres
       # mutate(sweep = map(fcast.ets, sw_sweep, fitted = FALSE, timetk_idx = FALSE)) %>%

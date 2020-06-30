@@ -35,4 +35,7 @@ tb_censo_final_join <- make_final_table(forecast_output, tb_censo, ano_FIRST_cen
 
 }
 }
+\seealso{
+Other final_wrangling: \code{\link{make_final_table_pres}}
+}
 \concept{final_wrangling}
