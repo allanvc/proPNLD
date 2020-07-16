@@ -23,7 +23,7 @@ make_final_table_pres <- function(tb_censo_final_join) {
   tb_censo_list <- tb_censo_final_join %>%
     dplyr::mutate(QTD_ALUNOS_AJUSTADA = round(QTD_ALUNOS_AJUSTADA)) %>%
     dplyr::select(-c("TAM_SERIE_HISTORICA", "FLAG_SERIE_COMPLETA",
-                     "key", "QTD_ALUNOS", "lo.95", "lo.80", "hi.80", "hi.95", "MAPE", "MASE")) %>%
+                     "key", "QTD_ALUNOS", "lo_95", "lo_80", "hi_80", "hi_95", "MAPE", "MASE")) %>%
     dplyr::ungroup() %>%
     dplyr::group_by(index) %>%
     dplyr::group_split()

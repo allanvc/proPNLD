@@ -1,7 +1,7 @@
 Package: projPNLD
 Type: Package
 Title: Projeção do alunado no âmbito do PNLD
-Version: 0.1.1
+Version: 0.1.2
 Date: 2020-07-09
 Authors@R: c(
     person(given="Allan", family="Quadros", email = "allan.quadros@fnde.gov.br",

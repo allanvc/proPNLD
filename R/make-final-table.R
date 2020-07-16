@@ -103,6 +103,9 @@ make_final_table <- function(forecast_output, tb_censo, ano_FIRST_censo, ano_LAS
                   QTD_ALUNOS, lo.95, lo.80, hi.80, hi.95,
                   MAPE, MASE, QTD_ALUNOS_AJUSTADA) %>%
 
+    dplyr::rename(lo_95 = lo.95, lo_80 = lo.80,
+                  hi_80 = hi.80, hi_95 = hi.95) %>% #Oracle SGBDs dont like "." in column names
+
 
     dplyr::group_by(CO_MUNICIPIO, CO_ENTIDADE, CO_TP_LOCALIZACAO, CO_ETAPA_ENSINO, index) %>%
 

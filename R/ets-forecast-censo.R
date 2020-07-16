@@ -21,7 +21,7 @@ ets_forecast_censo <- function(grupos, ano_FIRST_censo, ano_LAST_censo){
 
   out <- lapply(1:length(grupos), function(i){
     # i = 1
-    grupos[[i]] %>%
+    grupos[[i]] %>% # equivale ao elemento [[j]][[i]] no ambiente de testes
 
       # parte1
       dplyr::group_by(CO_MUNICIPIO, CO_ENTIDADE, CO_ETAPA_ENSINO) %>% # talvez mais demorado

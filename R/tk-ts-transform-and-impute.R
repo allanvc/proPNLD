@@ -41,9 +41,8 @@ tk_ts_transform_and_impute <- function(data.tbl, ano_LAST_censo, ano_FIRST_censo
 
     }, error = function(e){
 
-      tb_time_data.tbl2 <- imputeTS::na_locf(tb_time_data.tbl, option = "nocb") #NA input
+      imputeTS::na_locf(tb_time_data.tbl, option = "nocb") #NA input
 
-      return(tb_time_data.tbl2)
     })
     #forecast::na.interp(.) #NA input
 
