@@ -54,7 +54,7 @@ make_final_table <- function(forecast_output, tb_censo, ano_FIRST_censo, ano_LAS
                   CO_TP_LOCALIZACAO, DS_TP_LOCALIZACAO,
                   CO_ETAPA_ENSINO, NO_ETAPA_ENSINO
     ) %>%
-    dplyr::full_join(Xresultado_final_bind, by=c(
+    dplyr::left_join(Xresultado_final_bind, by=c(
       "CO_MUNICIPIO",
       "CO_ENTIDADE",
       "CO_ETAPA_ENSINO"))
@@ -73,7 +73,6 @@ make_final_table <- function(forecast_output, tb_censo, ano_FIRST_censo, ano_LAS
                   )
 
 
-
   # calculando tamanhos das series
   tb_TAM_SERIE_HISTORICA <- tb_censo %>%
     dplyr::group_by(CO_MUNICIPIO, CO_ENTIDADE, CO_ETAPA_ENSINO) %>%
@@ -82,7 +81,6 @@ make_final_table <- function(forecast_output, tb_censo, ano_FIRST_censo, ano_LAS
       TAM_SERIE_HISTORICA < (ano_LAST_censo - ano_FIRST_censo)+1,
       0, 1)) %>%
     dplyr::collect()
-
 
   rm(Xtb_censo_final_join)
 
@@ -103,14 +101,28 @@ make_final_table <- function(forecast_output, tb_censo, ano_FIRST_censo, ano_LAS
                   QTD_ALUNOS, lo.95, lo.80, hi.80, hi.95,
                   MAPE, MASE, QTD_ALUNOS_AJUSTADA) %>%
 
-    dplyr::rename(lo_95 = lo.95, lo_80 = lo.80,
-                  hi_80 = hi.80, hi_95 = hi.95) %>% #Oracle SGBDs dont like "." in column names
+    dplyr::rename(NU_ANO_CENSO_REF = CENSO_REF, #v0.1.3
+                  DT_HORA_EXEC = DT_HR_EXEC,
+                  NU_TAMANHO_SERIE_HIST = TAM_SERIE_HISTORICA,
+                  FL_SERIE_COMPLETA = FLAG_SERIE_COMPLETA,
+                  NU_ANO_INDEX = index,
+                  DS_KEY = key,
+                  QT_ALUNOS = QTD_ALUNOS,
+                  NU_LO_95 = lo.95, NU_LO_80 = lo.80,
+                  NU_HI_80 = hi.80, NU_HI_95 = hi.95,
+                  NU_MAPE = MAPE, NU_MASE = MASE,
+                  QT_ALUNOS_AJUSTADA = QTD_ALUNOS_AJUSTADA) %>% #Oracle SGBDs dont like "." in column names
 
+    #v0.1.3
+    dplyr::mutate(NU_MASE = dplyr::case_when(is.nan(NU_MASE) ~ NA_real_,
+                                             TRUE ~ NU_MASE)) %>%
 
-    dplyr::group_by(CO_MUNICIPIO, CO_ENTIDADE, CO_TP_LOCALIZACAO, CO_ETAPA_ENSINO, index) %>%
+    dplyr::group_by(CO_MUNICIPIO, CO_ENTIDADE, CO_TP_LOCALIZACAO, CO_ETAPA_ENSINO,
+                    NU_ANO_INDEX) %>%
 
-    dplyr::arrange(.by_group=TRUE)
+    dplyr::arrange(.by_group=TRUE) %>%
 
+    dplyr::ungroup() # v0.1.3
 
 
   return(Xtb_censo_final_join4)

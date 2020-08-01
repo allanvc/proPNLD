@@ -42,13 +42,17 @@ extract_and_clean_censo_full <- function(tb_censo) {
   coluna_entidades_com_ult_censo <- tb_censo_full %>%
     dplyr::filter(lubridate::year(NU_ANO_CENSO) == ano_ult_censo) %>%
     # dplyr::filter(NU_ANO_CENSO == ano_ult_censo) %>%
-    dplyr::select(CO_ENTIDADE, CO_ETAPA_ENSINO) %>%
+    # dplyr::select(CO_ENTIDADE, CO_ETAPA_ENSINO) %>%
+    dplyr::select(CO_MUNICIPIO, CO_ENTIDADE, CO_ETAPA_ENSINO) %>% #v0.1.3
     dplyr::distinct() %>%
     dplyr::collect()
 
 
   tb_censo_full <- tb_censo_full %>% dplyr::inner_join(coluna_entidades_com_ult_censo,
-                                                       by=c("CO_ENTIDADE", "CO_ETAPA_ENSINO"))
+                                                       # by=c("CO_ENTIDADE", "CO_ETAPA_ENSINO"))
+                                                       by=c("CO_MUNICIPIO",
+                                                            "CO_ENTIDADE",
+                                                            "CO_ETAPA_ENSINO")) #v0.1.3
 
   # # criando unidades de analise por mun/entidade/etapa
   # # vai otimizar o processo de projecao

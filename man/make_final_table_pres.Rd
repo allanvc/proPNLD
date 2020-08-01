@@ -2,7 +2,7 @@
 % Please edit documentation in R/make-final-table-pres.R
 \name{make_final_table_pres}
 \alias{make_final_table_pres}
-\title{Make Final Table for presenting}
+\title{Make Final Table for Presentation}
 \usage{
 make_final_table_pres(tb_censo_final_join)
 }
@@ -20,7 +20,7 @@ Produz a tabela final contendo a projeção para gravação no SGBD e
 \examples{
 \dontrun{
 
-tb_censo_final_join_pres <- make_final_table_pres(tb_censo_final_join)
+tb_censo_final_join_APR <- make_final_table_pres(tb_censo_final_join)
 
 }
 }

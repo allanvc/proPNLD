@@ -1,8 +1,8 @@
-Package: projPNLD
+Package: proPNLD
 Type: Package
 Title: Projeção do alunado no âmbito do PNLD
-Version: 0.1.2
-Date: 2020-07-09
+Version: 0.1.4
+Date: 2020-08-01
 Authors@R: c(
     person(given="Allan", family="Quadros", email = "allan.quadros@fnde.gov.br",
     role = c("aut", "cre")),
@@ -12,8 +12,8 @@ Authors@R: c(
 Description: Realiza a pojeção de dois passos (h=2) do número de alunos a partir 
     de séries temporais do censo escolar de modo a subsidiar a aquisição de 
     livros didáticos no âmbito do PNLD. É ajustado automaticamente um modelo de 
-    Suavização Exponencial (Exponential Smoothing) para cada etapa de ensino de 
-    cada escola pública no Brasil, resultando em mais de 800 mil modelos gerados.
+    Suavização Exponencial (Exponential Smoothing, ETS) para cada etapa de ensino 
+    de cada escola pública no Brasil, resultando em mais de 800 mil modelos gerados.
 Encoding: UTF-8
 License: GPL-3
 Imports: ROracle,
