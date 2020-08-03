@@ -92,7 +92,11 @@ make_final_table <- function(forecast_output, tb_censo, ano_FIRST_censo, ano_LAS
 
   # ajustando a apresentacao final
   Xtb_censo_final_join4 <- Xtb_censo_final_join3 %>%
-    dplyr::select(CENSO_REF, DT_HR_EXEC, CO_UF, SG_UF, CO_MUNICIPIO, NO_MUNICIPIO,
+
+    dplyr::mutate(DS_VERSAO_PACOTE = as.character(utils::packageVersion("proPNLD"))) %>% #v0.1.5 - incluindo versao do pacote
+
+    dplyr::select(CENSO_REF, DT_HR_EXEC, DS_VERSAO_PACOTE,
+                  CO_UF, SG_UF, CO_MUNICIPIO, NO_MUNICIPIO,
                   CO_ENTIDADE, NO_ENTIDADE,
                   CO_TP_LOCALIZACAO, DS_TP_LOCALIZACAO,
                   CO_ETAPA_ENSINO, NO_ETAPA_ENSINO,

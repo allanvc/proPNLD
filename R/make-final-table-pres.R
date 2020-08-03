@@ -22,7 +22,7 @@ make_final_table_pres <- function(tb_censo_final_join) {
 
   tb_censo_list <- tb_censo_final_join %>%
     dplyr::mutate(QT_ALUNOS_AJUSTADA = round(QT_ALUNOS_AJUSTADA)) %>%
-    dplyr::select(-c("NU_TAMANHO_SERIE_HIST", "FL_SERIE_COMPLETA",
+    dplyr::select(-c("DS_VERSAO_PACOTE", "NU_TAMANHO_SERIE_HIST", "FL_SERIE_COMPLETA",
                      "DS_KEY", "QT_ALUNOS", "NU_LO_95", "NU_LO_80", "NU_HI_80",
                      "NU_HI_95", "NU_MAPE", "NU_MASE")) %>%
     dplyr::ungroup() %>%

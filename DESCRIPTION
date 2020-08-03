@@ -1,8 +1,8 @@
 Package: proPNLD
 Type: Package
 Title: Projeção do alunado no âmbito do PNLD
-Version: 0.1.4
-Date: 2020-08-01
+Version: 0.1.5
+Date: 2020-08-03
 Authors@R: c(
     person(given="Allan", family="Quadros", email = "allan.quadros@fnde.gov.br",
     role = c("aut", "cre")),
@@ -31,7 +31,8 @@ Imports: ROracle,
     imputeTS,
     parallel,
     doParallel,
-    foreach
+    foreach,
+    utils
 Depends: R (>= 3.1.0)
 SystemRequirements: Oracle Instant Client (OCI libraries) v19.6.0.0 e ROracle 1.3-2.
 RoxygenNote: 6.1.1
