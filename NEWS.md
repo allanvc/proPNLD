@@ -1,5 +1,28 @@
+## proPNLD 0.1.5 (2020-08-01 - github)
 
-## proPNLD 0.1.4 (2020-08-01 - github release)
+* funções
+  + `make_final_table_apr()` -> `make_final_table_man()`
+  
+* objetos
+  + tabelas de apresentação agora tem final GES, indicandotabela de GESTÃO
+  
+* dados:
+  + criação de nova variável "TP_CENSO" nas tabelas de output
+
+* passagem de variável de ENV do docker para o script - armazenada em tp_censo,
+  que indica se a projeção está sendo rodada com base na "prévia" ou no censo "oficial"
+
+---
+
+## proPNLD 0.1.5 (2020-08-01 - github)
+
+* pequenos ajustes para inserção na base
+
+* criação da coluna versão do pacote
+
+---
+
+## proPNLD 0.1.4 (2020-08-01 - github)
 
 * mudança de nome do pacote:
   + de projPNLD para `proPNLD`

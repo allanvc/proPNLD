@@ -28,6 +28,7 @@ tb_censo_full <- extract_and_clean_censo_full(tb_censo)
 }
 }
 \seealso{
-Other clusters: \code{\link{detect_cores}}
+Other clusters: 
+\code{\link{detect_cores}()}
 }
 \concept{clusters}

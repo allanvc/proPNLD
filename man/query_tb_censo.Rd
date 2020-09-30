@@ -32,6 +32,7 @@ tb_censo <- query_tb_censo(conn, schema, tab)
 }
 }
 \seealso{
-Other query: \code{\link{extract_and_clean_censo_full}}
+Other query: 
+\code{\link{extract_and_clean_censo_full}()}
 }
 \concept{query}

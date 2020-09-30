@@ -24,6 +24,7 @@ ano_FIRST_censo <- get_year_FIRST_censo(tb_censo_full)
 }
 }
 \seealso{
-Other get_ano: \code{\link{get_year_LAST_censo}}
+Other get_ano: 
+\code{\link{get_year_LAST_censo}()}
 }
 \concept{get_ano}

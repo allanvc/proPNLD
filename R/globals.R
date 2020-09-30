@@ -8,4 +8,5 @@ utils::globalVariables(c("CO_MUNICIPIO", "CO_ENTIDADE", "CO_ETAPA_ENSINO",
                          "index", "lo.95", "lo.80", "MAPE", "MASE", "QTD_ALUNOS_AJUSTADA",
                          "ets_forecast_censo", "ma_forecast_censo", "arima_forecast_censo",
                          "ets_ma_forecast_censo", "DS_TP_LOCALIZACAO", "i",
-                         "NU_ANO_INDEX", "QT_ALUNOS_AJUSTADA", "DS_VERSAO_PACOTE"))
+                         "NU_ANO_INDEX", "QT_ALUNOS_AJUSTADA", "DS_VERSAO_PACOTE",
+                         "TP_CENSO"))

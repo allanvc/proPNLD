@@ -24,6 +24,7 @@ n_clusters <- detect_cores()
 }
 }
 \seealso{
-Other clusters: \code{\link{split_mun_groups}}
+Other clusters: 
+\code{\link{split_mun_groups}()}
 }
 \concept{clusters}

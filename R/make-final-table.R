@@ -10,6 +10,8 @@
 #'     inicial da série, retornado pela função \code{\link{get_year_FIRST_censo}}.
 #' @param ano_LAST_censo \code{vector} do tipo \code{numeric} contendo o ano
 #'     final da série, retornado pela função \code{\link{get_year_LAST_censo}}.
+#' @param tipo_censo String passada via \code{commandArgs()} que indica o tipo
+#'     de execução do censo, \code{"prévia"} ou \code{"oficial"}
 #'
 #' @return Um \code{tibble} contendo os dados tratados.
 #'
@@ -25,7 +27,8 @@
 #' }
 #' @export
 #'
-make_final_table <- function(forecast_output, tb_censo, ano_FIRST_censo, ano_LAST_censo) {
+make_final_table <- function(forecast_output, tb_censo, ano_FIRST_censo,
+                             ano_LAST_censo, tipo_censo) {
 
 
   # pouco >1min com 8 clusters em paralelo e 2 dfs por grupo
@@ -95,7 +98,9 @@ make_final_table <- function(forecast_output, tb_censo, ano_FIRST_censo, ano_LAS
 
     dplyr::mutate(DS_VERSAO_PACOTE = as.character(utils::packageVersion("proPNLD"))) %>% #v0.1.5 - incluindo versao do pacote
 
-    dplyr::select(CENSO_REF, DT_HR_EXEC, DS_VERSAO_PACOTE,
+    dplyr::mutate(TP_CENSO = tipo_censo) %>% #v0.1.6
+
+    dplyr::select(CENSO_REF, DT_HR_EXEC, TP_CENSO, DS_VERSAO_PACOTE,
                   CO_UF, SG_UF, CO_MUNICIPIO, NO_MUNICIPIO,
                   CO_ENTIDADE, NO_ENTIDADE,
                   CO_TP_LOCALIZACAO, DS_TP_LOCALIZACAO,

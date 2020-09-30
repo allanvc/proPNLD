@@ -18,7 +18,7 @@
 #' }
 #' @export
 #'
-make_final_table_pres <- function(tb_censo_final_join) {
+make_final_table_man <- function(tb_censo_final_join) {
 
   tb_censo_list <- tb_censo_final_join %>%
     dplyr::mutate(QT_ALUNOS_AJUSTADA = round(QT_ALUNOS_AJUSTADA)) %>%

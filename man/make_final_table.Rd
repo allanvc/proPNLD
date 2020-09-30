@@ -4,8 +4,13 @@
 \alias{make_final_table}
 \title{Make Final Table}
 \usage{
-make_final_table(forecast_output, tb_censo, ano_FIRST_censo,
-  ano_LAST_censo)
+make_final_table(
+  forecast_output,
+  tb_censo,
+  ano_FIRST_censo,
+  ano_LAST_censo,
+  tipo_censo
+)
 }
 \arguments{
 \item{forecast_output}{\code{list} de \code{tibble}s contendo o forecast output
@@ -19,6 +24,9 @@ inicial da série, retornado pela função \code{\link{get_year_FIRST_censo}}.}
 
 \item{ano_LAST_censo}{\code{vector} do tipo \code{numeric} contendo o ano
 final da série, retornado pela função \code{\link{get_year_LAST_censo}}.}
+
+\item{tipo_censo}{String passada via \code{commandArgs()} que indica o tipo
+de execução do censo, \code{"prévia"} ou \code{"oficial"}}
 }
 \value{
 Um \code{tibble} contendo os dados tratados.
@@ -36,6 +44,7 @@ tb_censo_final_join <- make_final_table(forecast_output, tb_censo, ano_FIRST_cen
 }
 }
 \seealso{
-Other final_wrangling: \code{\link{make_final_table_pres}}
+Other final_wrangling: 
+\code{\link{make_final_table_man}()}
 }
 \concept{final_wrangling}

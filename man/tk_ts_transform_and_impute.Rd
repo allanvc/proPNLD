@@ -27,7 +27,8 @@ Ordena a série temporal de cada etapa de ensino/escola e realiza
     Carried Backwards - NOCB quando hpa apenas o valor do último censo na série.
 }
 \seealso{
-Other forecast: \code{\link{ets_forecast_censo}}
+Other forecast: 
+\code{\link{ets_forecast_censo}()}
 }
 \concept{forecast}
 \keyword{internal}

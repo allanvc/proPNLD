@@ -4,8 +4,13 @@
 \alias{parallel_forecast}
 \title{Parallel Forecast}
 \usage{
-parallel_forecast(n_clusters, grupos, ano_FIRST_censo, ano_LAST_censo,
-  model = "ets")
+parallel_forecast(
+  n_clusters,
+  grupos,
+  ano_FIRST_censo,
+  ano_LAST_censo,
+  model = "ets"
+)
 }
 \arguments{
 \item{n_clusters}{String contendo a "string de conexão" retornada por

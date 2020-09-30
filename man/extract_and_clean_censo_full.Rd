@@ -24,6 +24,7 @@ tb_censo_full <- extract_and_clean_censo_full(tb_censo)
 }
 }
 \seealso{
-Other query: \code{\link{query_tb_censo}}
+Other query: 
+\code{\link{query_tb_censo}()}
 }
 \concept{query}

@@ -25,7 +25,8 @@ Executa o forecast automático utilizando modelo de suavização
     exponencial.
 }
 \seealso{
-Other forecast: \code{\link{tk_ts_transform_and_impute}}
+Other forecast: 
+\code{\link{tk_ts_transform_and_impute}()}
 }
 \concept{forecast}
 \keyword{internal}
